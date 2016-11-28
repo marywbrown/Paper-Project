@@ -1,0 +1,757 @@
+%% bare_conf.tex
+%% V1.3
+%% 2007/01/11
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.7 or later) with an IEEE conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE!
+%% User assumes all risk.
+%% In no event shall IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
+%%                    bare_conf.tex, bare_jrnl.tex, bare_jrnl_compsoc.tex
+%%*************************************************************************
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. IEEE's font choices can trigger bugs that do  ***
+% *** not appear when using other class files.                            ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+% Note that the a4paper option is mainly intended so that authors in
+% countries using A4 can easily print to A4 and see how their papers will
+% look in print - the typesetting of the document will not typically be
+% affected with changes in paper size (but the bottom and side margins will).
+% Use the testflow package mentioned above to verify correct handling of
+% both paper sizes by the user's LaTeX system.
+%
+% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
+% should be used if it is desired that the figures are to be displayed in
+% draft mode.
+%
+\documentclass[conference]{IEEEtran}
+\usepackage{amsmath}
+% Add the compsoc option for Computer Society conferences.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+%\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 4.0 (2003-05-27) and later if using hyperref.sty. cite.sty does
+% not currently provide for hyperlinked citations.
+% The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found as epslatex.ps or
+% epslatex.pdf at: http://www.ctan.org/tex-archive/info/
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage[cmex10]{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics. If using
+% it, be sure to load this package with the cmex10 option to ensure that
+% only type 1 fonts will utilized at all point sizes. Without this option,
+% it is possible that some math symbols, particularly those within
+% footnotes, will be rendered in bitmap form which will result in a
+% document that can not be IEEE Xplore compliant!
+%
+% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
+% There is also a support site at:
+% http://algorithms.berlios.de/index.html
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/tools/
+
+
+%\usepackage{mdwmath}
+%\usepackage{mdwtab}
+% Also highly recommended is Mark Wooding's extremely powerful MDW tools,
+% especially mdwmath.sty and mdwtab.sty which are used to format equations
+% and tables, respectively. The MDWtools set is already installed on most
+% LaTeX systems. The lastest version and documentation is available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/mdwtools/
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+%\usepackage{eqparbox}
+% Also of notable interest is Scott Pakin's eqparbox package for creating
+% (automatically sized) equal width boxes - aka "natural width parboxes".
+% Available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/eqparbox/
+
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\usepackage[tight,footnotesize]{subfigure}
+% subfigure.sty was written by Steven Douglas Cochran. This package makes it
+% easy to put subfigures in your figures. e.g., "Figure 1a and 1b". For IEEE
+% work, it is a good idea to load it with the tight package option to reduce
+% the amount of white space around the subfigures. subfigure.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at:
+% http://www.ctan.org/tex-archive/obsolete/macros/latex/contrib/subfigure/
+% subfigure.sty has been superceeded by subfig.sty.
+
+
+
+%\usepackage[caption=false]{caption}
+%\usepackage[font=footnotesize]{subfig}
+% subfig.sty, also written by Steven Douglas Cochran, is the modern
+% replacement for subfigure.sty. However, subfig.sty requires and
+% automatically loads Axel Sommerfeldt's caption.sty which will override
+% IEEEtran.cls handling of captions and this will result in nonIEEE style
+% figure/table captions. To prevent this problem, be sure and preload
+% caption.sty with its "caption=false" package option. This is will preserve
+% IEEEtran.cls handing of captions. Version 1.3 (2005/06/28) and later
+% (recommended due to many improvements over 1.2) of subfig.sty supports
+% the caption=false option directly:
+%\usepackage[caption=false,font=footnotesize]{subfig}
+%
+% The latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/
+% The latest version and documentation of caption.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/caption/
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure. The latest version and documentation can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/base/
+
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/sttools/
+% Documentation is contained in the stfloats.sty comments as well as in the
+% presfull.pdf file. Do not use the stfloats baselinefloat ability as IEEE
+% does not allow \baselineskip to stretch. Authors submitting work to the
+% IEEE should note that IEEE rarely uses double column equations and
+% that authors should try to avoid such use. Do not be tempted to use the
+% cuted.sty or midfloat.sty packages (also by Sigitas Tolusis) as IEEE does
+% not format its papers in such ways.
+
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/misc/
+% Read the url.sty source comments for usage information. Basically,
+% \url{my_url_here}.
+
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+\title{Location Recommendation System Based On Two Check-in Behaviors: The City Business Circles Check-in Behavior And Around Home Check-in Behavior}
+
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+%\author{\IEEEauthorblockN{Han Zhang}
+%\IEEEauthorblockA{School of Mobile Information Engineering\\
+%Sun Yat-sen University\\
+%Email: hanzhang@yourmail.com}
+%\and
+%\IEEEauthorblockN{Chang-Dong Wang}
+%\IEEEauthorblockA{School of Mobile Information Engineering\\
+%Sun Yat-sen University\\
+%Email: wangchd3@mail.sysu.edu.cn}
+%\and
+%\IEEEauthorblockN{Author three}
+%\IEEEauthorblockA{Address three}}
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+%
+\author{\IEEEauthorblockN{Manrui Li\IEEEauthorrefmark{1},
+Second author's name\IEEEauthorrefmark{1} and
+Third author's name\IEEEauthorrefmark{1}}
+\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Data and Compuyer Science\\
+Sun Yat-sen University, Guangzhou, P. R. China, 510000\\
+Email: marywbrown1@gmial.com, SecondAuthor@Email.com,ThirdAuthor@Email.com}}
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+
+\begin{abstract}
+%\boldmath
+***In the abstract, we need to state the research background, motivation, the proposed method, experiment results, as follows***. Notice that the abstract part should be written after the other parts have been finished.***
+One sentence to state the background. One sentence to state the motivation.  A few sentences to describe the proposed method. One sentence to state the experimental setting. One sentence to state the experimental results.
+
+\end{abstract}
+% IEEEtran.cls defaults to using nonbold math in the Abstract.
+% This preserves the distinction between vectors and scalars. However,
+% if the conference you are submitting to favors bold math in the abstract,
+% then you can use LaTeX's standard command \boldmath at the very start
+% of the abstract to achieve this. Many IEEE journals/conferences frown on
+% math in the abstract anyway.
+
+\begin{IEEEkeywords}
+
+Keyword one; Keyword two; Keyword three;
+***
+
+\end{IEEEkeywords}
+
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+
+\section{Introduction}
+\label{sec:introduction}
+The early recommender systems always used the information of traditional websites to promote the sales volume of the online consumption, while the recent recommender systems began to focus on recommending the offline consumption by using the information provided through integrated devices. The Online location-based social networks(LBSNs)are representative. Because the information of real-time locations becomes easier to be acquired by GPS, LBSNs are widely researched and applied, such as Foursquare, Gowalla, Facebook Places, in which users can share the experience in physical world by checking-in with a Point-Of-Interest(POI). LBSNs can help people discovering the interesting places to do outside activities, especially when people are in urban, where the POIs are considerable quantity and various and hard to choose for users.
+
+\label{sec:introduction}
+Though LBSNs can benefit users outdoor activities and bridge the gap of physical world and online social network, LBSNs encounter more challenges than traditional recommender systems.
+1).\textbf{Users transfer preference with the time period.}
+In traditional recommender systems, relatively speaking, users' preference is comparatively stable in a short time period. However, the users' preference can be totally different in a day of different period in LBSNs, for example, users always prefer a food-relevant location at lunch time while they may prefer a bar-relevant location at night, which means LBSNs are more correlative with time period.
+2).\textbf{The limited effect of social influence.} Traditional social relationship has limited effect in LBSNs for the reason that almost 90\% user's overlap check-ins to his/her friends' check-ins is less than $20\%$ in LBSNs according to (Cho,Myers,and Leskovec 2011). In other word, we should explore more appropriate social relationship in LBSNs to improve the accuracy of recommendation.
+3).\textbf{Extreme sparse check-in data.}
+An individual user usually check in a limited numbers of locations for two reasons. On one hand, though there are numerous locations in a city, users only check-in a small section for the restrict of distance. On the other hand, users prefer to check-in their favorite locations repetitively, which leads to the number of check-ins in different location is limited for a single user.
+
+\subsection{Related Work}
+The related research work in POIs recommendation is mainly focus on three aspects: geographical check-in behaviors~\cite{}, social influence~\cite{},and temporal patterns~\cite{}.
+
+\label{sec:related work}
+Geographical influence is a vital feature of location-based recommendation, for it's the mainly difference between POIs recommender system and traditional recommender system.
+%geographical influence
+~\cite{Cho_2011__Friendship_and_M} proposed a home-work two centers model, in which the probability distribution over the locations of a user at different time is simply the mixture of “home” and “work” location distributions.
+~\cite{2012 Fused Matrix Factorization} proposed a Multi-center Gaussian Model(MGM) via modeling the probability distribution of a user’s check-in on a location, and utilized the inverse distance rule and incorporate multi-center geographical influence into the fused MF framework.
+%social influence
+As for social influence,
+~\cite{Point-of-Interest 2016} defined three types of friends including social friends, location friends and neighboring friends,then took the union of the three to expand the social network of users.
+~\cite{Fused matrix factorization}used the probabilistic matrix factorization with social regularization (PMFSR) in POIs recommendation to learn the latent features of users and POIs.
+%temporal influence
+With regard to temporal patterns,
+~\cite{2012 Location Type Classification Using Tweet Content} explored the periodical feature of time in the location type classification by assuming people prefer different activities at different time, and divided time of day into 24 hours to establish recommender system for each hour.
+~\cite{Spatial-temporal latent ranking for successive point-of-interest recommendation.}
+explored temporal property of successive check-ins and they discovered that successive check-ins had a remarkable correlation.
+%tips
+Besides, sentiment analysis techniques and content-based model always applied in POIs recommendation to explore the explicit preference information from tips in ~\cite{}.
+
+
+\subsection{Our Work}
+
+%Describe our work here (no formulas), including: the proposed method, experimental setting, and experimental results, a few sentences for each part.
+We divided users' check-in behaviors in two categories, Neighbouring Check-in Behavior(NCB) and Outgoing Check-in Behavior(OCB), and established different models respectively for the two kinds of check-in behaviours. Considering people often decide a place where they can have a series of recreational activities when they go outside, for example, a place they can go shopping and dinner and movies in a successive time. So we proposed Business Circles Model(BCM) to predict the business zones that users probably prefer to go firstly, and then recommend the locations in the zones. Besides, we clustered users into different communities by their interests and  incorporated overlapping community information as regularization terms into MF framework. Finally, we consider the temporal information and integrated time parameters in the final loss functions.
+
+%***Overall, the introduction part plus the abstract should not be longer than one page***
+
+%unfinished
+The remainder of the paper is organized as follows.
+Section~\ref{sec:themainwork} describes in detail the ****.
+Experimental results are reported in section~\ref{sec:experiments}.
+We conclude our paper in section~\ref{sec:conclusion}.
+
+\section{Models}
+\label{sec:themainwork}
+
+This is the first part you can write as soon as the algorithm is implemented. That is, you can write this part now.
+
+Describe the algorithm here, one major part per paragraph.
+
+\subsection{Business Circles Model(BCM)}
+Assume that there are m users $U(u_1,...u_m)$ and n check-in locations $L(l_1,...l_n)$, we use k-means algorithm to cluster all the check-in locations and find $p$ business circles $C(c_1,...,c_p)$.
+\\%k-means 用怎样的流程？ 附上伪代码！
+
+Then we give the rating $r_{ik}$ of user $u_i$ on business circle $c_k$ if the circle contains check-in locations which have been rated by $u_i$ already. There are two indicators have high correlation with the preference of user on $c_k$ as followed:
+
+1)The average daily quantity of check-ins in business circles.
+
+2)The average rating of user $u_i$ on locations which are in the area of business circles $c_k$.
+
+So we define the $r_{ik}$ as:
+\begin{equation}
+\begin{aligned}
+r_{ik}=\alpha \frac{\sum_{{l_j} \in c_k} r_{il_j}}{N_{i{l_j \in c_k}}}
+        \cdot \frac{1}{  r_{max}}
+        + (1-\alpha) \frac{N_{{l_j} \in {c_k}}}{max(N_{{l_j} \in {c_k}'})}
+\end{aligned}
+\end{equation}
+
+The first term indicates average rating of $u_i$ on all the check-in locations, which are in the business circle $c_k$. $N_{i,l_j}$ is the amount of check-ins that $u_i$ rated on locations in $c_k$,and $\frac{1}{r_{max}}$ is multiplied to normalize the result in the range of $[0,1]$. In five class marking system, $r_{max}=5$.
+And the second term is the average daily quantity of check-ins in $c_k$, $max(N_{{l_j} \in {c_k}'})$ is the maximum check-ins on business circles, ${c_k}' \in C$. The term is also in the range of [0,1]. $\alpha$ is a parameter which will be determined value via experiment.
+\\
+
+However, the above function can only rate the business circles which contains the locations that users have been check-in before, so we use these the low-rank matrix factorization approach to predict the other ratings $\widehat{r}_{ik}$. The users’ ratings on business circles form a $m\times p$ rating matrix $R' = [r_ik]$, where $r_ik$ is the rating of $u_i$ on $c_k$ that we calculate by formula (1).
+
+The objective function $E_c$ is:%(这句话好没水准啊，话说)
+\\
+\begin{equation}
+%\begin{aligned}
+E_c = \frac{1}{2} \sum^m_{i=1} \sum^p_{k=1} I_{ik} ({r_{ik}}'-{u_i}^T c_k)^2
+      + \frac{\lambda_{u}}{2} ||U||^2_F +  \frac{\lambda_c}{2} ||C||^2_F \\
+%\end{aligned}
+\end{equation}
+
+The predict rating of user $u_i$ on $c_k$ is:
+\begin{equation}
+\widehat{r}_{ik} = {u_i}^T c_k
+\end{equation}
+
+Considering the preference of users on business circles also related with the distance from user home to locations, we introduce distance factor as:
+
+\begin{equation}
+ P_{r_{ik}}  = dist(i,k) \times {u_i}^T c_k
+\end{equation}
+
+$P_{r_{ik}}$ is the final predict rating ,$Dist(i,k)$ is the distance from $u_i's$ home to business center $C_k$.
+
+Since the check-in probability and the distance from home to the corresponding location obey a power law distribution ~\cite{Point-of-interest recommender systems: A separate-space perspective},we define the distance function as the following:
+\begin{equation}
+ dist(i,k)= \frac{d_{ik}^\gamma}{d_{{ik'}_{min}}^\gamma}
+\end{equation}
+
+$d_{ik}$ is the distance that user $u_i$'s home from business circle $c_k$, and $d_{ik}$ is the minimum distance from home to business circles. $\gamma$ is the parameter of power law distribution which can be
+learned by maximum likelihood estimation.
+
+
+\subsection{Overlapping Users' Communities}
+
+(Cho,Myers,and Leskovec 2011) proposed that traditional social relationship has limited effect in LBSNs for the reason that 90\% user's overlap check-ins to his/her friends' check-ins is less than $20\%$ in LBSNs. Sparse dataset and too many check-in categories lead to that result,for example,user A prefer food-related, bar-related and park-related locations while user B prefer food-related, art-related and sports-related locations, their similarity is probable low even though their preference in food-related locations are similar.
+\\
+In order to solve that problem we proposed $?$ model to divide users into $q$ overlapping communities by their check-in categories, denoted by $M(m_1,...m_q)$.
+(~\cite{Overlapping Community Regularization for Rating Prediction in Social Recommender Systems} ) proposed MFC model to incorporate the overlapping community information as regularization terms into the MF framework. Based on MFC model,our model introduce the temporary factor to improve the model more suitable for location-based recommendations. % model 的图 shown in figure one.
+
+Different from MFC model, in our model, we consider that users have distinct interests on diverse communities at various time, for example, $u_i$ prefer a restaurant-related location more than a bar-related location at 11:00~13:00, but totally opposite at midnight. % 这个例子可以找数据作图，然后配图说明
+%figure!!!
+\\
+
+The community regularization term is:
+\begin{equation}
+\frac{\lambda_h}{2} \sum^m_{i=1} \sum^q_{h=1} I_{ih} Z_{iht} \sum_{U_f \in M_{ih}} S_{if} ||U_i - U_f||^2_F
+\end{equation}
+
+where $M_{ih}$ is the users in the same community $m_h$ with $u_i$ as shown in figure 1, $I_ih$ equals 1 if $u_i$ belongs to $c_h$ or equals 0. $Z_{iht}$ is the preference of $u_i$ on community $m_h$ at time $t$.
+
+%$Z_{iht}$如何计算？先对每个用户的每一种categories 做一个签到高峰期表再说
+
+%修改 our work 部分，关于时间因子的描述。
+
+%把那参考文献都个加上去吧
+
+
+\subsection{Outgoing Check-in Behavior And Neighbouring Check-in Behavior }
+%为什么要分这两种模式进行推荐呢/
+%如何判断什么时候进行外出推荐？什么时候进行就近推荐？
+%外出推荐：引进两个，结合baseline
+%就近推荐：朋友关系，只考虑住在附近的人，去的店铺还相同？ 
+ 
+Users consuming behavior will be changed when they go outside, so does users' check-ins. Firstly, users probably have higher consumption when they are outside than daily cost and the types of consumption are also different. Then, users always have a series check-in behaviors when they are going out in a consecutive time. Besides, the target user who can give you a good advice is different, people prefer to accept the suggestion of user who have the similar track with them when they consume near the home or working place while they willing to take advice from users who are familiar with the destination when they are out.%(能不能想办法把when引导的从句换一种形式表达？)
+However, the traditional recommendations can't distinguish these two behavior, so we proposed Outgoing And Neighbouring Check-ins(OANC) Model.
+
+Out going 
+
+
+we introduce the rating $P_{r_ik}$ of $u_i$ on $c_k$ % 同时考虑了商业圈模型，得到了商业圈的与测评分；再考虑了用户社区重复聚类，加上正则项，进行推荐。最终的公式是;
+
+
+\subsection{ Model}
+
+%就近很重要的两点，一个是朋友关系，变成了轨迹 相似的人+相似用户，一个是引入了价格约束因子。
+\begin{equation}
+\begin{aligned}
+& E=\frac{1}{2} \sum^m_{i=1} \sum^n_{j=1} I_{ij} (R_{ij}-U^T_i V_j)^2 + \frac{\lambda_u}{2} ||U||^2_F +  \frac{\lambda_v}{2} ||V||^2_F \\
+&　+ \frac{\lambda_k}{2} \sum^m_{i=1} \sum^q_{h=1} I_{ih} Z_{ih} \sum_{f \in M_{ih}} G_{i,f} ||U_i - U_f||^2_F \\
+&　+ \frac{\lambda_p}{2} \sum_{k \in ?} P_{jk?} ||V_i - V_k?||^2_F \\
+& E=E \times Dist(ij?)
+\end{aligned}
+\end{equation}
+
+
+\section{Experiments}
+\label{sec:experiments}
+
+After doing enough experiments, this part is the second part you can write.
+
+\subsection{Experimental Setting}
+
+Accuracy measurement.
+
+Run the experiment on what type of machine/what type of cloud.
+
+What methods have been compared.
+
+\subsection{Data Collection}
+
+Where/when/how to collect the data.
+
+Data characterization,  may require one table to describe them.
+
+\subsection{Result Analysis}
+
+Case study: what you have discovered?
+
+Performance comparison: compare the proposed method with the existing methods in terms of some performance measurement here.
+
+Time complexity analysis: compare the proposed method with the existing methods in terms of some time complexity performance measurement here.
+
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+Conclusion can be written after the other parts have been finished.
+
+\bibliographystyle{IEEEtran}
+\bibliography{ref}% ref is used to collect references.
+
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex,
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation Results}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command, the
+% \label for the overall figure must come after \caption.
+% \hfil must be used as a separator to get equal spacing.
+% The subfigure.sty package works much the same way, except \subfigure is
+% used instead of \subfloat.
+%
+%\begin{figure*}[!t]
+%\centerline{\subfloat[Case I]\includegraphics[width=2.5in]{subfigcase1}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{subfigcase2}%
+%\label{fig_second_case}}}
+%\caption{Simulation results}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+
+
+% An example of a floating table. Note that, for IEEE style tables, the
+% \caption command should come BEFORE the table. Table text will default to
+% \footnotesize as IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that IEEE does not put floats in the very first column - or typically
+% anywhere on the first page for that matter. Also, in-text middle ("here")
+% positioning is not used. Most IEEE journals/conferences use top floats
+% exclusively. Note that, LaTeX2e, unlike IEEE journals/conferences, places
+% footnotes above bottom floats. This can be corrected via the \fnbelowfloat
+% command of the stfloats package.
+
+
+
+
+
+
+
+% conference papers do not normally have an appendix
+
+
+% use section* for acknowledgement
+
+
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+
+
+
+
+% that's all folks
+\end{document}
+
+

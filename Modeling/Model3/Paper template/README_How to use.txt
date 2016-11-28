@@ -1,0 +1,1 @@
+You need to install WinEdt (in Windows) or Texshop (in Mac). Just open Paper.tex to edit the paper and then build it using PDFLatex command. 
